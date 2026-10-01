@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    @apply bg-white font-sans text-[1rem] leading-[1.65] text-slate-600 antialiased;
+    overflow-x: clip;           /* safety net; real causes are fixed at the source */
+    min-height: 100dvh;
+  }
+
+  h1, h2, h3, h4 { @apply font-heading font-bold text-ink; letter-spacing: -0.005em; }
+  img, svg, video, iframe { max-width: 100%; }
+  section[id] { scroll-margin-top: 4.25rem; }
+
+  :focus-visible { outline: 3px solid #2B8AE6; outline-offset: 3px; border-radius: 6px; }
+  ::selection { background: #A9D0F5; color: #0A2540; }
+}
+
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-page px-5 sm:px-8; }
+  .section-pad    { @apply py-16 md:py-24; }
+
+  .h-display { @apply font-heading font-bold leading-[1.02] tracking-tight; font-size: clamp(2.6rem, 7vw, 4.6rem); }
+  .h-section { @apply font-heading font-bold leading-[1.08]; font-size: clamp(2rem, 4.4vw, 2.9rem); }
+  .lead      { @apply text-[1.0625rem] md:text-lg leading-relaxed; }
+
+  /* ── Buttons ── */
+  .btn {
+    @apply relative inline-flex min-h-[48px] items-center justify-center gap-2 overflow-hidden rounded-xl
+           px-6 py-3 text-base font-semibold leading-none transition-all duration-200 select-none
+           disabled:cursor-not-allowed;
+  }
+  /* glossy blue button: gradient body + top highlight + moving sheen on hover */
+  .btn-primary {
+    @apply btn text-white hover:-translate-y-0.5;
+    background: linear-gradient(180deg, #3A9BF0 0%, #1670CF 55%, #0F5BB0 100%);
+    box-shadow: 0 8px 20px -6px rgba(15,91,176,.55), inset 0 1px 0 rgba(255,255,255,.45);
+  }
+  .btn-primary::after {
+    content: ''; position: absolute; inset: 0; transform: translateX(-120%) skewX(-20deg);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.45), transparent);
+    transition: transform .7s ease;
+  }
+  .btn-primary:hover::after { transform: translateX(120%) skewX(-20deg); }
+  .btn-glass {
+    @apply btn text-ink hover:-translate-y-0.5;
+    background: rgba(255,255,255,.65); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.9);
+    box-shadow: 0 6px 18px -8px rgba(15,91,176,.35), inset 0 1px 0 #fff;
+  }
+  .btn-glass-dark {
+    @apply btn text-white hover:-translate-y-0.5;
+    background: rgba(255,255,255,.12); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.35);
+  }
+  .btn-glass-dark:hover { background: rgba(255,255,255,.2); }
+
+  /* ── Glass surfaces ── */
+  .glass {
+    background: linear-gradient(145deg, rgba(255,255,255,.88), rgba(255,255,255,.55));
+    backdrop-filter: blur(16px) saturate(1.5); -webkit-backdrop-filter: blur(16px) saturate(1.5);
+    border: 1px solid rgba(178,212,247,.75);
+    box-shadow: 0 18px 40px -18px rgba(15,91,176,.35), inset 0 1px 0 #fff, inset 0 -1px 0 rgba(15,91,176,.06);
+  }
+  .glass-dark {
+    background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+    backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    border: 1px solid rgba(255,255,255,.28);
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.35);
+  }
+  /* diagonal gloss that sweeps across on hover */
+  .sheen { position: relative; overflow: hidden; }
+  .sheen::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    transform: translateX(-130%) skewX(-18deg);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent);
+    transition: transform .9s ease;
+  }
+  .sheen:hover::after { transform: translateX(130%) skewX(-18deg); }
+  .lift { transition: transform .3s ease, box-shadow .3s ease; }
+  .lift:hover { transform: translateY(-6px); box-shadow: 0 26px 50px -20px rgba(15,91,176,.5), inset 0 1px 0 #fff; }
+
+  /* ── Form fields (16px stops iOS zooming on focus) ── */
+  .field-label { @apply mb-1.5 block text-sm font-semibold text-ink; }
+  .field {
+    @apply block w-full rounded-xl border border-ice-300 bg-white/80 px-4 py-3 text-base text-ink
+           placeholder:text-slate-400 transition focus:border-azure-500 focus:bg-white focus:outline-none
+           focus:ring-4 focus:ring-azure-500/15;
+    min-height: 48px;
+  }
+}
+
+/* ── Scroll reveal (only armed once JS is running, so crawlers and slow loads see everything) ── */
+.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+.js .reveal.in { opacity: 1; transform: none; }
+
+/* ── Hero motion ── */
+@keyframes truck-arrive { from { transform: translateX(-70px); opacity: 0; } to { transform: none; opacity: 1; } }
+.truck-arrive { animation: truck-arrive 1s cubic-bezier(.22,1,.36,1) both; }
+
+@keyframes float-a { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.float-a { animation: float-a 6s ease-in-out infinite; }
+.float-b { animation: float-a 7.5s ease-in-out -2s infinite; }
+
+@keyframes drift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px,-30px) scale(1.12); } }
+.orb { position: absolute; border-radius: 9999px; filter: blur(60px); animation: drift 16s ease-in-out infinite; pointer-events: none; }
+
+/* ── Road band: the truck crosses the screen left to right, the road streams beneath it ── */
+@keyframes drive { from { transform: translateX(-540px); } to { transform: translateX(100vw); } }
+.drive { animation: drive 20s linear infinite; }
+@keyframes road-dash { from { background-position-x: 0; } to { background-position-x: -96px; } }
+.road-dash {
+  background-image: linear-gradient(90deg, rgba(255,255,255,.85) 0 48px, transparent 48px 96px);
+  background-size: 96px 4px; background-repeat: repeat-x; animation: road-dash .9s linear infinite;
+}
+@keyframes idle { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-1.5px); } }
+.idle { animation: idle .5s ease-in-out infinite; }
+.silhouette { filter: brightness(0) invert(1); opacity: .09; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .js .reveal { opacity: 1; transform: none; }
+  .drive { animation: none; transform: translateX(40vw); }
+  .road-dash, .idle { animation: none; }
+}
