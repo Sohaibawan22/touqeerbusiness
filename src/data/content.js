@@ -10,8 +10,8 @@ export const services = [
 
 // photo: a real picture from /public/images.  trailer: 'flat' | 'single' | 'decks' | 'container'  (a drawn illustration, used when there is no photo)
 export const vehicles = [
-  { name: 'Multi car carrier', capacity: '7-10 cars', text: 'Best for moving several vehicles at once.', photo: { src: '/images/carrier.webp', width: 1200, height: 348, alt: 'Shazil and Rayan two-deck car carrier loaded with eight cars' } },
-  { name: 'Container truck', capacity: 'Goods and cargo', text: 'Sealed container transport for commercial cargo.', photo: { src: '/images/container.webp', width: 1200, height: 329, alt: 'Shazil and Rayan container truck' } },
+  { name: 'Multi car carrier', capacity: '7-10 cars', text: 'Streamlined nationwide auto transport for dealerships, corporate fleets, and private vehicles', photo: { src: '/images/carrier.webp', width: 1200, height: 348, alt: 'Shazil and Rayan two-deck car carrier loaded with eight cars' } },
+  { name: 'Nationwide Container & Cargo Services', capacity: 'Goods and cargo', text: 'Complete logistics solution for port containers and local goods with safe delivery across Pakistan.', photo: { src: '/images/container.webp', width: 1200, height: 329, alt: 'Shazil and Rayan container truck' } },
 
 ];
 
