@@ -11,7 +11,8 @@ const ssrDir = path.join(root, 'dist-ssr');
 const { render } = await import(pathToFileURL(path.join(ssrDir, 'entry-server.js')).href);
 
 // Your public address. On Vercel this is filled in automatically; set SITE_URL once you own a domain.
-let siteUrl = process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : '');
+// let siteUrl = process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : '');
+let siteUrl = process.env.SITE_URL || 'https://www.shazilandrayan.com';
 siteUrl = siteUrl.replace(/\/+$/, '');
 
 let html = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
