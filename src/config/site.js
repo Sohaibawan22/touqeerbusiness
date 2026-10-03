@@ -13,10 +13,8 @@ export const site = {
     lines: ['Plot 683/A, New Qaid e Azam Truck Stand, Gate No. 6', 'Mauripur Road, Mauripur, Karachi, Pakistan'],
     oneLine: 'Plot 683/A, New Qaid e Azam Truck Stand, Gate No. 6, Mauripur Road, Mauripur, Karachi, Pakistan',
     mapsLink: 'https://maps.app.goo.gl/eWMh4FqKmtxKAgLd8',
-    // exact pin of the business listing on Google Maps
-    mapsEmbed:'https://maps.app.goo.gl/eWMh4FqKmtxKAgLd8'
-    //  'https://maps.google.com/maps?q=24.8675687,66.9518249&z=17&output=embed'
-     ,
+    mapsEmbed:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.645068997327!2d66.94925!3d24.8675735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb315007896e215%3A0x6ff12adc87b562b1!2sSHAZIL%20AND%20RAYAN%20CARGO%20CAR%20CARRIER%20SERVICES!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk',
     geo: { lat: 24.8675687, lng: 66.9518249 },
   },
 };
