@@ -8,10 +8,9 @@ const ServicesSection = () => (
   <section id="services" className="section-pad relative overflow-hidden bg-[linear-gradient(180deg,#F7FBFF,#EAF4FF)]">
     <div className="container-page">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <h2 className="h-section">Vehicle and cargo transport, handled end to end</h2>
+        <h2 className="h-section">Car Carrier &amp; Vehicle Transport Services</h2>
         <p className="lead mt-4">
-          Professional goods transport, logistics management and car carrier trailer service, with safety,
-          speed and reliability for businesses and individuals nationwide.
+          Professional car carrier trailer and cargo transport services across Pakistan — safe, insured and on time for businesses and individuals nationwide.
         </p>
       </Reveal>
 

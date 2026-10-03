@@ -14,7 +14,9 @@ export const site = {
     oneLine: 'Plot 683/A, New Qaid e Azam Truck Stand, Gate No. 6, Mauripur Road, Mauripur, Karachi, Pakistan',
     mapsLink: 'https://maps.app.goo.gl/eWMh4FqKmtxKAgLd8',
     // exact pin of the business listing on Google Maps
-    mapsEmbed: 'https://maps.google.com/maps?q=24.8675687,66.9518249&z=17&output=embed',
+    mapsEmbed:'https://maps.app.goo.gl/eWMh4FqKmtxKAgLd8'
+    //  'https://maps.google.com/maps?q=24.8675687,66.9518249&z=17&output=embed'
+     ,
     geo: { lat: 24.8675687, lng: 66.9518249 },
   },
 };

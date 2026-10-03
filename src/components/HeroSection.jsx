@@ -10,10 +10,9 @@ const HeroSection = () => (
 
     <div className="container-page relative grid items-center gap-12 py-14 md:py-20 lg:grid-cols-12 lg:gap-8 lg:py-24">
       <div className="lg:col-span-5">
-        <h1 className="h-display">Safe, secure, <span className="whitespace-nowrap">on-time</span> vehicle transport across Pakistan.</h1>
+        <h1 className="h-display">Car Carrier &amp; Vehicle Transport Services Across Pakistan</h1>
         <p className="lead mt-6 max-w-xl">
-          {site.name} runs car carrier trailers and container trucks out of Karachi. Tell us the vehicle
-          and the route, and we will quote you.
+          Safe and reliable car transportation from Karachi to Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta and all major cities across Pakistan.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn-primary">
@@ -35,10 +34,10 @@ const HeroSection = () => (
             <div className="absolute inset-x-[5%] -bottom-1 h-5 rounded-[50%] bg-azure-900/30 blur-md" aria-hidden="true" />
             <img
               src="/images/carrier.webp"
-              alt="Shazil and Rayan two-deck car carrier loaded with eight cars"
+              alt="Shazil and Rayan two-deck car carrier trailer loaded with eight cars for vehicle transport across Pakistan"
               width="1200"
               height="348"
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
               className="truck-arrive relative h-auto w-full drop-shadow-[0_18px_14px_rgba(15,91,176,.25)]"
             />

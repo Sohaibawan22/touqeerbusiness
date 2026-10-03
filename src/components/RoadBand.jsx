@@ -5,7 +5,7 @@ import { stats } from '../data/content';
 /** The vehicle-themed band under the hero: silhouettes, glass stat cards and our container truck driving along the road. */
 const RoadBand = () => (
   <section
-    aria-label="Our reach"
+    aria-label="Car carrier reach and statistics"
     className="relative overflow-hidden bg-[linear-gradient(160deg,#082F5E_0%,#0F5BB0_58%,#2B8AE6_100%)] text-white"
   >
     <div className="orb -left-20 top-0 h-72 w-72 bg-azure-400/40" aria-hidden="true" />
@@ -17,8 +17,8 @@ const RoadBand = () => (
 
     <div className="container-page relative pt-16 md:pt-20">
       <Reveal className="max-w-2xl">
-        <h2 className="h-section !text-white">Moving vehicles and cargo, city to city</h2>
-        <p className="lead mt-4 text-ice-200">From a single car to a full trailer load, we keep you updated from pickup to drop-off.</p>
+        <h2 className="h-section !text-white">Car Carrier &amp; Cargo Transport — City to City Across Pakistan</h2>
+        <p className="lead mt-4 text-ice-200">From a single car to a full trailer load — Karachi to Lahore, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta and beyond.</p>
       </Reveal>
 
       <ul className="mt-10 grid gap-4 sm:grid-cols-3">

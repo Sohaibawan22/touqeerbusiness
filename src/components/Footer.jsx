@@ -2,10 +2,21 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { navLinks, site, whatsappLink } from '../config/site';
 
+const routeLinks = [
+  { label: 'Karachi ⇄ Lahore', msg: 'Hello, I need a car carrier quote for Karachi ⇄ Lahore.' },
+  { label: 'Karachi ⇄ Islamabad', msg: 'Hello, I need a car carrier quote for Karachi ⇄ Islamabad.' },
+  { label: 'Karachi ⇄ Rawalpindi', msg: 'Hello, I need a car carrier quote for Karachi ⇄ Rawalpindi.' },
+  { label: 'Karachi ⇄ Faisalabad', msg: 'Hello, I need a car carrier quote for Karachi ⇄ Faisalabad.' },
+  { label: 'Karachi ⇄ Multan', msg: 'Hello, I need a car carrier quote for Karachi ⇄ Multan.' },
+  { label: 'Karachi ⇄ Peshawar', msg: 'Hello, I need a car carrier quote for Karachi ⇄ Peshawar.' },
+  { label: 'Karachi ⇄ Quetta', msg: 'Hello, I need a car carrier quote for Karachi ⇄ Quetta.' },
+  { label: 'Karachi ⇄ Hyderabad', msg: 'Hello, I need a car carrier quote for Karachi ⇄ Hyderabad.' },
+];
+
 const Footer = () => (
   <footer className="bg-[linear-gradient(180deg,#082F5E,#06244A)] text-ice-200">
     <div className="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-12">
-      <div className="lg:col-span-5">
+      <div className="lg:col-span-4">
         <a href="#home" className="inline-flex items-center gap-3" aria-label={`${site.fullName}, back to top`}>
           <img src="/favicon.svg" alt="" width="44" height="44" loading="lazy" className="h-11 w-11 rounded-[10px]" />
           <span className="flex flex-col leading-none">
@@ -13,21 +24,48 @@ const Footer = () => (
             <span className="mt-1 text-sm text-ice-300">{site.tagline}</span>
           </span>
         </a>
-        <p className="mt-5 max-w-sm">Safe, secure and reliable vehicle and cargo transport, from Karachi to cities across Pakistan.</p>
+        <p className="mt-5 max-w-sm">Professional car carrier and vehicle transport services from Karachi to all major cities across Pakistan. Fully insured, door-to-door delivery.</p>
       </div>
 
-      <nav aria-label="Footer" className="lg:col-span-3">
-        <h2 className="font-heading text-xl font-semibold !text-white">Explore</h2>
+      <nav aria-label="Footer navigation" className="lg:col-span-2">
+        <h2 className="font-heading text-xl font-semibold !text-white">Navigate</h2>
         <ul className="mt-4">
           {navLinks.map(({ label, id }) => (
             <li key={id}>
               <a href={`#${id}`} className="inline-flex min-h-[44px] items-center hover:text-white hover:underline hover:underline-offset-4">{label}</a>
             </li>
           ))}
+          <li>
+            <a href="#routes" className="inline-flex min-h-[44px] items-center hover:text-white hover:underline hover:underline-offset-4">Routes</a>
+          </li>
+          <li>
+            <a href="#how-it-works" className="inline-flex min-h-[44px] items-center hover:text-white hover:underline hover:underline-offset-4">How It Works</a>
+          </li>
+          <li>
+            <a href="#faq" className="inline-flex min-h-[44px] items-center hover:text-white hover:underline hover:underline-offset-4">FAQ</a>
+          </li>
         </ul>
       </nav>
 
-      <div className="lg:col-span-4">
+      <nav aria-label="Car carrier routes" className="lg:col-span-3">
+        <h2 className="font-heading text-xl font-semibold !text-white">Popular Routes</h2>
+        <ul className="mt-4">
+          {routeLinks.map((r) => (
+            <li key={r.label}>
+              <a
+                href={whatsappLink(r.msg)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[44px] items-center hover:text-white hover:underline hover:underline-offset-4"
+              >
+                {r.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div className="lg:col-span-3">
         <h2 className="font-heading text-xl font-semibold !text-white">Contact</h2>
         <ul className="mt-3">
           <li><a href={site.phone.href} className="inline-flex min-h-[44px] items-center gap-3 hover:text-white"><Phone size={18} className="text-ice-300" aria-hidden="true" /> {site.phone.display}</a></li>
@@ -40,7 +78,7 @@ const Footer = () => (
 
     <div className="border-t border-white/10">
       <p className="container-page py-6 text-sm text-ice-300">
-        © <span suppressHydrationWarning>{new Date().getFullYear()}</span> {site.fullName}. All rights reserved.
+        © <span suppressHydrationWarning>{new Date().getFullYear()}</span> {site.fullName}. All rights reserved. | Car Carrier Services Pakistan | Vehicle Transport Karachi
       </p>
     </div>
   </footer>

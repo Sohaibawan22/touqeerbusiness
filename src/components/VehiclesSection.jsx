@@ -8,8 +8,10 @@ const VehiclesSection = () => (
     <div className="orb -right-24 top-20 h-80 w-80 bg-azure-400/20" aria-hidden="true" />
     <div className="container-page relative">
       <Reveal className="max-w-2xl">
-        <h2 className="h-section">Our transport fleet</h2>
-        <p className="lead mt-4">30+ vehicles, including modern car carriers and container trucks equipped with safety and security tracking.</p>
+        <h2 className="h-section">Our Car Carrier &amp; Cargo Fleet</h2>
+        <p className="lead mt-4">
+          30+ vehicles — including modern multi-car carrier trailers and container trucks — equipped with safety straps, security and tracking across Pakistan.
+        </p>
       </Reveal>
 
       <div className="mt-12 grid gap-6 md:grid-cols-2">
